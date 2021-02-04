@@ -105,6 +105,11 @@
       verbLevel="1"
     />
     <column
+      name="s_region"
+      type="text"
+      verbLevel="1"
+    />
+    <column
       name="access_url"
       type="text"
       ucd="meta.ref.url"
@@ -147,6 +152,7 @@
         <var key="c1max" source="c1max"/>
         <var key="c2min" source="c2min"/>
         <var key="c2max" source="c2max"/>
+        <var key="s_region" source="s_region"/>
         <var key="spatial_frame_type" source="spatial_frame_type"/>
         <var key="instrument_host_name">"custom"</var>
         <var key="instrument_name">"custom"</var>
@@ -167,6 +173,7 @@
           <bind name="c1max">@c1max</bind>
           <bind name="c2min">@c2min</bind>
           <bind name="c2max">@c2max</bind>
+          <bind name="s_region">@s_region</bind>
           <bind name="instrument_host_name">@instrument_host_name</bind>
           <bind name="instrument_name">@instrument_name</bind>
           <bind name="creation_date">@creation_date</bind>
