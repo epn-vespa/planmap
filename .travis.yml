@@ -1,0 +1,14 @@
+language: minimal
+
+services:
+  - docker
+
+install:
+  - docker pull gavodachs/dachs
+  - docker run --name dachs_container -dt gavodachs/dachs
+
+script:
+  - docker ps | grep -q dachs_container
+  - docker exec dachs_container /dachs.sh start
+  - docker exec dachs_container dachs val q
+  - docker exec dachs_container dachs imp -M 1000 q.rd
