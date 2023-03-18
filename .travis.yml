@@ -1,0 +1,14 @@
+language: minimal
+
+services:
+  - docker
+
+install:
+  - docker pull gavodachs/dachs
+  - docker run --name dachs_container -v $PWD:/var/gavo/inputs/planmap -dt gavodachs/dachs
+
+script:
+  - docker ps | grep -q dachs_container
+  - docker exec dachs_container /dachs.sh start
+  - docker exec dachs_container dachs val planmap/q
+  - docker exec dachs_container dachs imp -M 100 planmap/q
