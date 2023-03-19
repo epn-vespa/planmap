@@ -1,5 +1,5 @@
 # planmap
 
-[![Build Status](https://app.travis-ci.com/chbrandt/planmap.svg?branch=master)](https://app.travis-ci.com/chbrandt/planmap)
+![dachs test workflow](https://github.com/chbrandt/planmap/actions/workflows/dachs-test.yml/badge.svg)
 
 Planmap EPNTAP resource
