@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Repository content
+      run: du -sh ${{ github.workspace }}/*
     - name: Pull DaCHS image (latest)
       run: docker pull gavodachs/dachs:latest
     - name: Run container
