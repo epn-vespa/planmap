@@ -1,5 +1,5 @@
 name: DaCHS Resource Test
-run-name: Test repository against latest dachs
+run-name: Test service (on latest dachs)
 on:
   push:
     branches: [ "master" ]
@@ -7,11 +7,11 @@ on:
     branches: [ "master" ]
 
 jobs:
-  Setup:
+  Validate-and-Import:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Repository content
+      - name: List repository content
         run: du -sh ${{ github.workspace }}/*
       - name: Pull DaCHS image (latest)
         run: docker pull gavodachs/dachs:latest
